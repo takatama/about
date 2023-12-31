@@ -1,11 +1,12 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
+import { basePath } from "../next.config";
+const BASE_PATH = basePath || "";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
-import takatama from "../public/takatama.png";
 
 export default function Home() {
   return (
@@ -54,9 +55,9 @@ export default function Home() {
         <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
           <Image
             alt="Profile image of Hirokazu Takatama"
-            src={takatama}
-            layout="fill"
-            objectFit="cover"
+            src={`${BASE_PATH}/takatama.png`}
+            fill
+            style={{ objectFit: "cover" }}
           />
         </div>
       </section>
