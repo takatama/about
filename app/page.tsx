@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <main className="bg-white px-10 md:px-20 lg:px-40">
       <section className="min-h-screen">
-        {/* <nav className="py-10 mb-12 flex justify-between">
-          <h1 className="text-xl">Hello World</h1>
+        <nav className="py-10 mb-12 flex justify-between">
+          <h1 className="text-xl"></h1>
           <ul className="flex items-center">
             <li>
               <BsFillMoonStarsFill className="cursor-pointer" />
@@ -22,13 +22,14 @@ export default function Home() {
             <li>
               <a
                 className="bg-gradient-to-r from-cyan-500 to-blue-700 text-white px-4 py-2 rounded-md ml-8"
-                href="#"
+                href="https://lapras.com/public/takatama"
+                target="_blank"
               >
                 Resume
               </a>
             </li>
           </ul>
-        </nav> */}
+        </nav>
         <div className="text-center p-10">
           <h2 className="text-5xl py-2 text-blue-800 font-medium md:text-6xl">
             Hirokazu TAKATAMA
