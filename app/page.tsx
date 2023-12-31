@@ -16,9 +16,9 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className="bg-white px-5 md:px-20 lg:px-40 dark:bg-gray-900">
+      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
         <section className="min-h-screen">
-          <nav className="py-10 mb-6 flex justify-between">
+          <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl"></h1>
             <ul className="flex items-center">
               <li>
@@ -38,7 +38,7 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className="text-center p-5">
+          <div className="text-center p-10">
             <h2 className="text-5xl py-2 text-blue-800 font-medium md:text-6xl dark:text-cyan-500">
               Hirokazu TAKATAMA
             </h2>
