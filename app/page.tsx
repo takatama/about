@@ -7,6 +7,7 @@ import {
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
+import React from "react";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
             src={`${BASE_PATH}/takatama.png`}
             fill
             style={{ objectFit: "cover" }}
+            priority={true}
           />
         </div>
       </section>
