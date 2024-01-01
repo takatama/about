@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { basePath } from "../next.config";
+import { basePath } from "../../next.config";
 const BASE_PATH = basePath || "";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -40,14 +40,14 @@ export default function Home() {
                 <div className="px-4">
                   <a
                     href="/"
-                    className="text-gray-500 hover:text-blue-600 dark:text-gray-300"
+                    className="text-blue-600 font-semibold border-b-2 border-blue-600 dark:text-cyan-400 dark:border-cyan-400"
                   >
                     EN
                   </a>
                   <span className="text-gray-500 mx-2">|</span>
                   <a
                     href="/ja"
-                    className="text-blue-600 font-semibold border-b-2 border-blue-600 dark:text-cyan-400 dark:border-cyan-400"
+                    className="text-gray-500 hover:text-blue-600 dark:text-gray-300"
                   >
                     JP
                   </a>
@@ -57,16 +57,17 @@ export default function Home() {
           </nav>
           <div className="text-center p-5">
             <h2 className="text-5xl py-2 text-blue-800 font-medium md:text-6xl dark:text-cyan-500">
-              Hirokazu TAKATAMA
+              高玉 広和
             </h2>
+            <h3 className="text-blue-800 dark:text-cyan-500">
+              TAKATAMA Hirokazu
+            </h3>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
-              Talent Development & Technical Advisor
+              人材開発およびテクニカルアドバイザー
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-              Leverages software engineering knowledge to optimize business
-              processes. Responsible for nurturing engineering talent and
-              maintaining development environments in HRBP roles. Based in
-              Tokyo, Japan.
+              ソフトウェアエンジニアリングの知識を駆使してビジネスプロセスを効率化。
+              事業部人事（HRBP）でエンジニア人材の育成、開発環境の整備を担当。
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 text-gray-600 dark:text-gray-400">
