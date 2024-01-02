@@ -19,10 +19,10 @@ type Profile = {
   description: string;
 };
 
-type Lang = "en" | "ja";
+type Locale = "en" | "ja";
 
 type Content = {
-  [key in Lang]: Profile;
+  [key in Locale]: Profile;
 };
 
 const content: Content = {
@@ -44,15 +44,15 @@ const content: Content = {
 type NavbarProps = {
   darkMode: boolean;
   setDarkMode: (darkMode: boolean) => void;
-  lang: Lang;
-  setLang: (lang: Lang) => void;
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
 };
 
 const Navbar: React.FC<NavbarProps> = ({
   darkMode,
   setDarkMode,
-  lang,
-  setLang: setLang,
+  locale,
+  setLocale,
 }) => {
   const selected =
     "font-semibold border-b-2 border-blue-600 dark:border-cyan-400 dark:text-cyan-400 text-blue-600";
@@ -80,15 +80,15 @@ const Navbar: React.FC<NavbarProps> = ({
         <li>
           <div className="px-4">
             <button
-              onClick={() => setLang("en")}
-              className={`${lang === "en" ? selected : unselected}`}
+              onClick={() => setLocale("en")}
+              className={`${locale === "en" ? selected : unselected}`}
             >
               EN
             </button>
             <span className="text-gray-500 mx-2">|</span>
             <button
-              onClick={() => setLang("ja")}
-              className={`${lang === "ja" ? selected : unselected}`}
+              onClick={() => setLocale("ja")}
+              className={`${locale === "ja" ? selected : unselected}`}
             >
               JA
             </button>
@@ -119,8 +119,8 @@ const ProfileSection: React.FC<Profile> = ({
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [lang, setLang] = useState<Lang>("en");
-  const { name, romaji, title, description } = content[lang];
+  const [locale, setLocale] = useState<"en" | "ja">("en");
+  const { name, romaji, title, description } = content[locale];
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -129,8 +129,8 @@ export default function Home() {
           <Navbar
             darkMode={darkMode}
             setDarkMode={setDarkMode}
-            lang={lang}
-            setLang={setLang}
+            locale={locale}
+            setLocale={setLocale}
           />
           <ProfileSection
             name={name}
