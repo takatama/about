@@ -19,10 +19,10 @@ type Profile = {
   description: string;
 };
 
-type Locale = "en" | "ja";
+type Lang = "en" | "ja";
 
 type Content = {
-  [key in Locale]: Profile;
+  [key in Lang]: Profile;
 };
 
 const content: Content = {
@@ -44,15 +44,15 @@ const content: Content = {
 type NavbarProps = {
   darkMode: boolean;
   setDarkMode: (darkMode: boolean) => void;
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
+  lang: Lang;
+  setLang: (lang: Lang) => void;
 };
 
 const Navbar: React.FC<NavbarProps> = ({
   darkMode,
   setDarkMode,
-  locale,
-  setLocale,
+  lang,
+  setLang: setLang,
 }) => {
   const selected =
     "font-semibold border-b-2 border-blue-600 dark:border-cyan-400 dark:text-cyan-400 text-blue-600";
@@ -80,17 +80,17 @@ const Navbar: React.FC<NavbarProps> = ({
         <li>
           <div className="px-4">
             <button
-              onClick={() => setLocale("en")}
-              className={`${locale === "en" ? selected : unselected}`}
+              onClick={() => setLang("en")}
+              className={`${lang === "en" ? selected : unselected}`}
             >
               EN
             </button>
             <span className="text-gray-500 mx-2">|</span>
             <button
-              onClick={() => setLocale("ja")}
-              className={`${locale === "ja" ? selected : unselected}`}
+              onClick={() => setLang("ja")}
+              className={`${lang === "ja" ? selected : unselected}`}
             >
-              JP
+              JA
             </button>
           </div>
         </li>
@@ -119,8 +119,8 @@ const ProfileSection: React.FC<Profile> = ({
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [locale, setLocale] = useState<"en" | "ja">("en");
-  const { name, romaji, title, description } = content[locale];
+  const [lang, setLang] = useState<Lang>("en");
+  const { name, romaji, title, description } = content[lang];
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -129,8 +129,8 @@ export default function Home() {
           <Navbar
             darkMode={darkMode}
             setDarkMode={setDarkMode}
-            locale={locale}
-            setLocale={setLocale}
+            lang={lang}
+            setLang={setLang}
           />
           <ProfileSection
             name={name}
